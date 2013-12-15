@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\title{Workshop XI}
+
+\author{Paul Jones \\
+		Instructor Mariya Naumova\\
+		Calculus II (01:640:152, section C2)}
+
+\date{\today}
+
+\usepackage{setspace}
+\doublespacing
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+The thread length for a simple spool of cotton thread is 25 yards.
+To celebrate Valentine's Day, purchase a spool of red thread and send it to your beloved with these instructions:
+
+\begin{quotation}
+Unwind the thread and arrange it in the shape of a cardioid, $r = A(1 - \sin\theta)$.
+The area of that cardioid represents how much I love you compared to the ordinary Valentine's Day card!
+\end{quotation}
+
+Compute the arc length of $r = A(1 - \sin\theta)$ and find A so that the length is 25 yards. 
+Then compute the area inside that cardioid. Sketch the result.
+
+\begin{enumerate}[a)]
+
+	\item Arc length
+	
+		\begin{itemize}
+		
+			\item The formula for arc length in polar coordinate:
+			
+				\begin{equation*}
+					L = \int_a^b \sqrt{ \left[r(\theta)\right]^2 + 
+					\left[ {{ dr(\theta) } \over { d\theta }} \right] ^2 } d\theta
+				\end{equation*}
+			
+			\item Consider $\left[r(\theta)\right]^2$:
+			
+				\begin{equation*}
+					r^2 = A^2(1 - \sin\theta)^2 = A^2(1 - \sin^2\theta - 2\sin\theta)
+				\end{equation*}
+				
+			\item Consider $\left[ {{ dr(\theta) } \over { d\theta }} \right] ^2 $:
+			
+				\begin{equation*}
+					r' = -A\cos\theta, \; (r')^2 = A^2\cos^2\theta
+				\end{equation*}
+				
+			\item Based on my rough sketch, function is symmetrical after $[-\frac{\pi}{2}, \frac{\pi}{2}]$. 
+			Plug into formula:
+			
+				\begin{equation*}
+					L = 2\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sqrt{ A^2(1 - \sin^2\theta - 2\sin\theta) + A^2\cos^2\theta } \; d\theta
+				\end{equation*}
+				
+			\item Simplify and evalutate:
+			
+				\begin{equation*}
+					L = 2\sqrt{2}A \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sqrt{1 - \sin\theta} \; d\theta = 8A
+				\end{equation*}
+						
+		\end{itemize}
+	
+	\item Surface area
+	
+		\begin{itemize}
+		
+			\item If we want an $A$ such that $L = 25$, $A$ must equal $\frac{25}{8}$. The equation for $SA$:
+			
+				\begin{equation*}
+					SA = \frac12\int_a^b \left[r(\theta)\right]^2\, d\theta
+				\end{equation*}
+		
+			\item Plugin for our values:
+			
+				\begin{equation*}
+					SA = \left[\frac{25}{8}\right]^2\int_{-\frac\pi2}^{\frac\pi2} (1 - \sin\theta)^2 \, d\theta
+				\end{equation*}
+				
+			\item Integrate and simplify:
+				
+				\begin{equation*}
+					SA = \left[\frac{25}{8}\right]^2 \cdot \frac{3\pi}{2} \approx 46
+				\end{equation*}
+		\end{itemize}
+
+	\item Sketch
+
+\begin{figure}[h]
+     \centering
+          \label{graph.png}
+          \includegraphics*[width=\linewidth]{graph}
+\end{figure}
+
+\end{enumerate}
+
+\end{document}
+

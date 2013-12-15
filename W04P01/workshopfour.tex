@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\title{Workshop IV}
+
+\author{Paul Jones \\
+		Instructor Mariya Naumova\\
+		Calculus II (01:640:152, section C2)}
+
+\date{\today}
+
+\usepackage{setspace}
+\doublespacing
+
+\begin{document}
+
+
+\maketitle
+
+\pagebreak
+
+\begin{equation*} 
+\mathrm{a)} \int \! \sqrt{4 - x^2} \, \mathrm{d}x
+\end{equation*}
+
+\begin {itemize}
+
+\item Let $x = 2\sin\theta$, which makes $dx = 2\cos\theta\mathrm{d}\theta$ and $\theta = \sin^{-1}\frac{x}{2}$
+
+\begin{equation*} 
+\int \! 2\sqrt{1 - \sin\theta} \, 2\cos\theta\mathrm{d}\theta = 4\int \! cos^2\theta\mathrm{d}u
+\end{equation*}
+
+\item Apply the ``double angle formula'':
+
+\begin{equation*}
+4\int \! \frac{cos(2\theta) + 1}{2} \mathrm{d}\theta = 2\int cos(2\theta)\mathrm{d}\theta + 2\int \mathrm{d}\theta
+\end{equation*}
+
+\item Integrate and substitute back:
+
+\begin{equation*}
+\sin(2\theta) + 2\theta = \frac{1}{2}\sqrt{4 - x^2}x+2\sin^{-1}(\frac{x}{2}) + C
+\end{equation*}
+
+\end{itemize}
+
+\begin{center}
+\line(1,0){450}
+\end{center}
+
+\begin{equation*} 
+\mathrm{b)} \int \! \sqrt{4 + x^2} \, \mathrm{d}x
+\end{equation*}
+
+\begin{itemize}
+
+\item Let $u = \frac{x}{2}$ which makes $2\mathrm{d}u = \mathrm{d}x$:
+
+\begin{equation*} 
+\int \! 4\sqrt{1 + u^2} \, \mathrm{d}u
+\end{equation*}
+
+\item Let $u = \tan\theta$, which makes $\mathrm{d}u = \sec^2\theta\mathrm{d}\theta$
+
+\begin{equation*} 
+4\int \!\sqrt{1 + \tan^2\theta} \, \sec^2\theta\mathrm{d}\theta = 
+4 \int \! \sec^3\theta\mathrm{d}\theta
+\end{equation*}
+
+\item Apply reduction formula, integrate, and simplify (where $\theta = \tan^{-1}\frac{x}{2}$):
+
+\begin{equation*} 
+2\tan\theta\sec\theta + 2 \log(\sec\theta + \tan\theta) = 
+x\sec\tan^{-1}\frac{x}{2} + 
+2\log(\sec\tan^{-1}\frac{x}{2} + \frac{x}{2}) + C
+\end{equation*}
+
+\end{itemize}
+
+\pagebreak
+
+\begin{equation*} 
+\mathrm{c)} \int \! \sqrt{5 + 2x + x^2} \, \mathrm{d}x
+\end{equation*}
+
+\begin{itemize}
+
+\item Complete the square! Then, make $u = x + 1$ and find d$u$.
+
+\begin{equation*} 
+\int \! \sqrt{(x + 1)^2 + 4} \, \mathrm{d}x = \int \! \sqrt{u^2 + 4} \, \mathrm{d}u
+\end{equation*}
+
+\item Now use trigonometric substitution, specifically where $u = 2\tan\theta$:
+
+\begin{equation*} 
+4\int \! \sqrt{\tan\theta + 1} \, \sec\theta\mathrm{d}\theta = 4\int \! \sec^3\theta\mathrm{d}\theta
+\end{equation*}
+
+\item Now integrate with reduction formula:
+
+% 2tan^{-1}(x + 1) = \theta
+
+\begin{equation*} 
+2\tan\theta \sec\theta + 2\log(\tan\theta + \sec\theta)
+\end{equation*}
+
+\item Substitute back in:
+
+\begin{equation*}
+2\tan(2\tan^{-1}(x + 1)) \sec(2\tan^{-1}(x + 1)) + 2\log(\tan(2\tan^{-1}(x + 1)) + \sec(2\tan^{-1}(x + 1)))
+\end{equation*}
+
+\end{itemize}
+
+\end{document}

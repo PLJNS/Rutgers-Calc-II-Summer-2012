@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\title{Workshop VIII}
+
+\author{Paul Jones \\
+		Instructor Mariya Naumova\\
+		Calculus II (01:640:152, section C2)}
+
+\date{\today}
+
+\usepackage{setspace}
+\doublespacing
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\begin{enumerate}
+
+	\item Use the formula $\frac{a}{1-r} = a + ar + ar^2 + ar^3 + ... $ valid for 
+	$|r| < 1$ to express each of the following functions as a power series
+	$a_0 + a_1 x + a_2 x^2 + ... + a_n x^n + ...$
+
+	Give the formula for the coefficient $a_{n}$ in each case.
+
+	\begin{equation*}
+		f(x) = \frac{x}{1 - x}; \; g(x) = \frac{2}{3x^{4} + 16}
+	\end{equation*}	
+
+	\begin{itemize}
+		\item For $f(x)$, set $r = x$ and $a = x$.
+
+		\begin{equation*}
+			x + x^2 + x^3 + ... + x^n + ...
+		\end{equation*}
+		
+		\item Therefore, $a_n = \begin{cases} 0 & \text{if a = 0} \\ 1 &\text{otherwise}\end{cases}$
+		
+		\item Determine $a$ and $r$ for g(x):
+		
+		\begin{equation*}
+			\frac{2}{3x^4 + 16} = \frac{1}{8(1 - (-\frac{3}{16}x^4))}
+		\end{equation*}
+		
+		\item Where $a = \frac{1}{8}$, $r = -\frac{3}{16}x^4$, 
+		multiplied by a constant of $\frac{1}{8}$:
+		
+		\begin{equation*}
+			\frac{1}{8}
+			\left(		
+			-\frac{3}{16} x^4 + 
+			\left( \frac{3}{16}\right)^{2} x^{8} -
+			\left( \frac{3}{16}\right)^{3} x^{12}  + ...
+			\right)
+			= \frac{1}{8}\sum_{n = 0}^{\infty}\left(-\frac{3}{16}x^4 \right)^n
+		\end{equation*}
+		
+		\item Therefore, $a_n = \begin{cases}
+		  \frac{1}{8} \cdot (\frac{3}{16})^k \cdot (-1)^k & \text{if $n = 4k$} \\
+		  0 & \text{otherwise} 
+		\end{cases}$
+		
+	\end{itemize}
+	
+	\item Determine the interval of $x$ values in which each series in part 1 converge.
+	
+	\begin{itemize}
+	
+		\item $f(x)$ converges nowhere as it is a standard geometric series.
+		
+		\item $g(x)$ has a radius of convergence that can be found using this method:
+		
+		\begin{equation*}
+		\lim_{n \to \infty}\left| 
+		\frac{\left(\frac{1}{8}\right)
+		\left(-\frac{3}{16}\right)^{n + 1} 
+		(-1)^{n+1}}
+		{\left(\frac{1}{8}\right)
+		\left(-\frac{3}{16}\right)^{n} 
+		(-1)^{n}}
+		\right| = 
+		\left|\frac{3x^4}{16}\right|
+		\end{equation*}
+		
+		\item The radius of convergence, according to this test, is therefore:
+		
+		\begin{equation*}
+			I = \left(-\frac{1}{\sqrt[4]{3}}, \frac{1}{\sqrt[4]{3}}\right)
+		\end{equation*}
+	\end{itemize}
+	
+	\item Use you answer in part 1 to express $\int_0^1 \frac{2}{3x^4 + 16}$ as the sum of an infinite series.
+	
+	\begin{equation*}
+	\frac{1}{8}\sum_{n = 0}^{\infty}\int_0^1\left(-\frac{3}{16}x^4 \right)^n = 
+	\int_0^1 \frac{1x^0}{8} - \frac{3x^4}{128} + \frac{9x^8}{2048} - \frac{27x^{12}}{32768} + ... 
+	\end{equation*}
+	
+	
+	\begin{equation*}
+	= -\frac{x}{8}\left(1 - \frac{3 x^4}{2^4 \cdot 5} + \frac{x^8}{2^8} + ... \right)
+	\end{equation*}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\title{Workshop III}
+
+\author{Paul Jones \\
+		Instructor Mariya Naumova\\
+		Calculus II (01:640:152, section C2)}
+
+\date{\today}
+
+\usepackage{setspace}
+\doublespacing
+
+\begin{document}
+
+
+\maketitle
+
+\pagebreak
+
+\begin{enumerate}
+
+\item Suppose $m$ and $n$ integers. Compute $ \int_0^{2\pi} \! cos(mx)cos(nx) \, \mathrm{d} x$.
+
+\begin{itemize}
+
+\item Consider the trigonometric identity:
+
+\begin{equation*}
+\frac{cos(a + b) + cos(a - b)}{2} = cos(a)cos(b)
+\end{equation*}
+
+\item Plug in $a = mx$ and $b = nx$:
+
+\begin{equation*}
+\int_0^{2\pi} \! \cos(mx)\cos(nx) \, \mathrm{d} x = \frac{1}{2}\int_0^{2\pi} \! \cos(mx + nx) + \cos(mx - nx) \, \mathrm{d} x
+\end{equation*}
+
+\item This integrates to:
+
+\begin{equation*}
+\left. \frac{1}{2}\left(\ \frac{\sin(mx+nx)}{m + n} + \frac{\sin(mx - nx)}{m - n} \right)\ \right|_0^{2\pi}
+\end{equation*}
+
+\item Evaluate between 0 and $2\pi$:
+
+\begin{equation*}
+\frac{1}{2}\left(\ \frac{\sin(2\pi(m+n))}{m + n} + \frac{\sin(2\pi(m - n))}{m - n} \right)\ = 0
+\end{equation*}
+
+\item {\bf Solution}: Any multiple of $2\pi$ within $\sin$ will yield zero.
+
+\item But $m = n$ and $m = -n$ are different cases. $m = n$:
+
+\begin{equation*}
+\int_0^{2\pi} \! \cos^2(mx) \, \mathrm{d} x = \frac{1}{2}\int_0^{2\pi} \! 1 + \cos(2mx) \, \mathrm{d} x = \left. \left(\ x + \frac{\sin(2mx)}{2m} \right)\ \right|_0^{2\pi} = \pi
+\end{equation*}
+
+\item $m = -n$:
+\begin{equation*}
+\int_0^{2\pi} \! \cos(-nx)\cos(nx) \, \mathrm{d} x = \frac{1}{2}\int_0^{2\pi} \! 1 + \cos(-2nx) \, \mathrm{d} x = \pi + \frac{\sin(4n\pi))}{4n} = \pi
+\end{equation*}
+
+\end{itemize}
+
+\item Suppose $f(x) = A\cos(x) + B\cos(2x) + C\cos(3x)$ and you know that
+\begin{table}[h]
+\begin{center}
+	\begin{tabularx}{1\textwidth}{X X X}
+	$ \int_0^{2\pi} \! f(x)\cos(x) \, \mathrm{d} x = 5 $ & 
+	$ \int_0^{2\pi} \! f(x)\cos(2x) \, \mathrm{d} x = 6$ &
+	$\int_0^{2\pi} \! f(x)\cos(3x) \, \mathrm{d} x = 7$ \\
+	\end{tabularx}
+\end{center}
+\end{table}
+
+\begin{itemize}
+
+\item Substitute in $f(x)$ into each integral:
+
+\begin{equation*}
+\int_0^{2\pi} \! A\cos^2(x) + B\cos(x)\cos(2x) + C\cos(x)\cos(3x) \, \mathrm{d} x
+\end{equation*}
+
+\item These can be considered separately. 
+
+\begin{equation*}
+A \int_0^{2\pi} \! \cos^2(x) \, \mathrm{d} x + 
+B \int_0^{2\pi} \! \cos(x)\cos(2x) \, \mathrm{d} x + 
+C \int_0^{2\pi} \! \cos(x)\cos(3x) \, \mathrm{d} x = 5
+\end{equation*}
+
+\item By the proof in the previous section, the last two integrals equal zero, and the first equals pi, therefore:
+
+\begin{equation*}
+A\pi = 5, A = \frac{5}{\pi}
+\end{equation*}
+
+\item Now, substitute $f(x)$ into the next integral:
+
+\begin{equation*}
+A \int_0^{2\pi} \! \cos(x)\cos(2x) \, \mathrm{d} x + 
+B \int_0^{2\pi} \! \cos^2(2x) \, \mathrm{d} x + 
+C \int_0^{2\pi} \! \cos(2x)\cos(3x) \, \mathrm{d} x = 6
+\end{equation*}
+
+\item Using the same logic, the integrals multiplied by $A$ and $C$ are zero, and the integral beginning with $B$ equals pi, therefore:
+
+\begin{equation*}
+B\pi = 6, B = \frac{6}{\pi}
+\end{equation*}
+
+\item Finally, apply the same process to the last integral in the question:
+
+\begin{equation*}
+A \int_0^{2\pi} \! \cos(x)\cos(3x) \, \mathrm{d} x + 
+B \int_0^{2\pi} \! \cos(3x)\cos(2x) \, \mathrm{d} x + 
+C \int_0^{2\pi} \! \cos^2(3x) \, \mathrm{d} x = 7
+\end{equation*}
+
+\begin{equation*}
+C\pi = 7, C = \frac{7}{\pi}
+\end{equation*}
+
+
+\end{itemize}
+
+\end{enumerate}
+
+\end{document}

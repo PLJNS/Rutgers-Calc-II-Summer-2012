@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\title{Workshop I}
+
+\author{Paul Jones, David, Satreethai Sasinin, Deepak S.\\
+		Instructor Mariya Naumova\\
+		Calculus II (01:640:152, section C2)}
+
+\date{March 31st, 2012}
+
+\usepackage{setspace}
+\doublespacing
+
+\begin{document}
+
+
+\maketitle
+
+\pagebreak
+
+Sketch the region \emph{R} by $1 \le x \le 2$ and $0 \le y \le \frac{1}{x^3}$.
+
+\begin{figure}[h]
+     \centering
+          \label{fig.png}
+          \includegraphics*[height=.3\linewidth]{fig}
+\end{figure}
+
+\begin {enumerate}
+
+	\item Find (exactly) the number $\alpha$ such that the line $x = \alpha$ divides \emph{R} into two parts of equal area.
+	\begin{itemize}
+		\item To split the area found under a curve of a definite integral, define $\alpha$ as some point between the closed interval of [a, b].
+		\item Define two integrals between \emph{a} and $\alpha$, and  $\alpha$ and \emph{b} and set them equal to each other (as they are of equal area).
+		\item Solve for $\alpha$.
+	\end{itemize}
+	\begin{equation*}
+	\int_1^\alpha \! \frac{1}{x^3} \, \mathrm{d} x = \int_\alpha^2 \! \frac{1}{x^3} \, \mathrm{d} x
+	\end{equation*}
+	\begin{equation*}
+	a = \sqrt{\frac{8}{5}}
+	\end{equation*}
+	
+	\item Then find (to three places) the number \emph{b} such that the line $y = b$ divides \emph{R} into two parts of equal area.
+	
+	First, find the total area under the curve
+	\begin{equation*}
+	\int_1^2 \! \frac{1}{x^3} \,\mathrm{d} x = \frac{3}{8} = A
+	\end{equation*}
+	What we're looking for is what line that creates a rectangle with the x-axis whose area is equal to half this value, so we need only divide by half!
+	\begin{equation*}
+	\frac{1}{2} A = \frac{3}{16} = 0.1875 = b
+	\end{equation*}
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\title{Workshop X}
+
+\author{Paul Jones \\
+		Instructor Mariya Naumova\\
+		Calculus II (01:640:152, section C2)}
+
+\date{\today}
+
+\usepackage{setspace}
+\doublespacing
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\begin{enumerate}[a)]
+
+	\item Consider an isosceles triangle $\bigtriangleup OPQ$ where $OP = OQ = R$
+	and $\angle POQ = \theta$. Find $PQ$.
+	
+		\begin{itemize}
+		
+			\item If you were to split this isosceles triangle in half from
+			$\theta$, one could say that:
+			
+			\begin{equation*}
+				\sin\frac{\theta}{2} = \frac{\frac{1}{2}PQ}{R}
+			\end{equation*}
+			
+			\item Solving for $PQ$ yields:
+
+			\begin{equation*}
+				PQ = \frac{\sin\frac{\theta}{2}R}{2}
+			\end{equation*}			
+			
+		
+		\end{itemize}
+	
+	\item Consider a circle of radius $R$. Suppose that a regular $n$-gon is 
+	inscribed in this circle. Find the perimeter $P_n$ of this $n$-gon.
+	
+		\begin{itemize}
+	
+			\item In the previous exercise, the length of one side of this 
+			$n$-gon was found. The perimeter is $n$ times the value of this
+			operation.
+			
+			\item The perimeter is equal to one side of an $n$-polygon multiplied
+			by $n$:
+			
+			\begin{equation*}
+				2 n R \sin\frac{\pi}{n}
+			\end{equation*}
+		
+		\end{itemize}
+	
+	\item Find the $\lim_{n \to \infty} P_n$.
+
+		\begin{itemize}
+		
+			\item Factor out constants ($2R$), ``rearrange'', apply 
+			L'H\^{o}pital's rule to indeterminate form $\frac{0}{0}$, 
+			factor out $\pi$, and recognize that any multiple of $\pi$ 
+			within cosine yields zero:
+			
+			\begin{equation*}
+				2 R \lim_{n \to \infty} \frac{\sin\frac{\pi}{n}}{n^{-1}} = 
+				2 \pi R \lim_{n \to \infty} \cos\pi t = 2 \pi R
+			\end{equation*}
+		
+		\end{itemize}
+	
+	\item Using the arc-length integral, find the arc-length of a circle of radius $R$.
+	Explain why this integral must give the same answer as the previous limit.
+
+		\begin{itemize}
+		
+		\item When describing a circle, the $a$ and $b$ values must of 
+			the integral must yield an entire circle verses simply a portion
+			of an arc. In an attempt to keep things simple, one can pick the values
+			of $[0, 2\pi]$.
+			
+			\item Being as a circle is not a function, there is no simple function
+			to input into the arc-integral's formula. Any ``y as a function of x''
+			will limit one to a portion of a circle, and a portion of an arc. 
+			But if one were to parametrically define the circle with radius $R$ as
+			$x(t) = Rcos(t)$ and $y(t) = Rsin(t)$ where $0 \le t \le 2\pi$, 
+			then one would have a full circle.
+			
+			\item The arc-length integral for parametric equations, defined in 
+			section 11.2, is as follows:
+			
+			\begin{equation*}
+				s = \int_a^b \sqrt{x'(t)^2 + y'(t)^2}dt
+			\end{equation*}
+			
+			\item Therefore the integral for the arc length of a circle with radius R is
+			as follows:
+			
+			\begin{equation*}
+			\int_0^{2\pi}\sqrt{(R \frac{d}{dt}\cos t)^2+(R \frac{d}{dt}\sin t)^2}\;dt
+		=	\int_0^{2\pi}\sqrt{(-R \sin t)^2+(R \cos t)^2}\;dt
+			\end{equation*}
+			
+			\begin{equation*}
+			=	R \int_0^{2\pi}\sqrt{\sin^2 t + \cos^2 t}\;dt = 
+			R \int_0^{2\pi} dt = 
+			2 \pi R
+			\end{equation*}
+					
+					
+			\item The ``arc-length'' of a circle with radius $R$ should equal the 
+			value of the perimeter of a polygon whose number of sides approach infinity because
+			a circle's ``arc-length'' is its perimeter and a polygon with an infinite
+			amount of sides is a circle. Every point on a circle is equidistant from the
+			center, which could be thought as a polygon with an infinite amount of 
+			infinitesimally small sides. A circle's ``arc-length'' is the perimeter of a circle because
+			arc-length is usually some subdivision of some function, and in 
+			the case of a circle that subdivision is the whole circle and the function
+			is a circle.	
+				
+		\end{itemize}
+		
+\end{enumerate}
+
+\end{document}
+

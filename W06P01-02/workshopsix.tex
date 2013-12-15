@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\title{Workshop VI}
+
+\author{Paul Jones \\
+		Instructor Mariya Naumova\\
+		Calculus II (01:640:152, section C2)}
+
+\date{\today}
+
+\usepackage{setspace}
+\doublespacing
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\begin{itemize}
+
+\item Two students are sharing a loaf of bread. Student A, now hungrier and more
+ferocious, eats two thirds of the the loaf, then student B eats half of what
+remains, then A eats two-thirds of what remains, then B eats half of what remains,
+and so on. How much of the loaf will each student eat?
+
+\begin{itemize}
+
+	\item Begin working out the pattern:
+
+	\begin{table}[h]
+		\begin{center}
+			\caption{Beginning the pattern}
+				\begin{tabular}{|c c|c c|}
+				\hline
+				\multicolumn{2}{|c|}{Student A} & \multicolumn{2}{|c|}{Student B} \\
+				Eats & Remains & Eats & Remains \\\hline
+				$\frac{2}{3}$ & $\frac{1}{3}$ & $\frac{1}{6}$ & $\frac{1}{6}$ \\\hline
+				$\frac{1}{9}$ & $\frac{1}{18}$ & $\frac{1}{36}$ & $\frac{1}{36}$ \\\hline
+				$\frac{1}{9 \cdot 2 \cdot 3}$ & $\frac{1}{18 \cdot 2 \cdot 3}$ & $\frac{1}{18 \cdot 2 \cdot 3 \cdot 2}$ & $\frac{1}{18 \cdot 2 \cdot 3 \cdot 2}$ \\
+				\hline
+				\end{tabular}
+			\label{ }
+		\end{center}
+	\end{table}
+	
+	\item Consider Student B: She consumes bread according to this sum:
+	
+	\begin{equation*}
+	\sum_{i=1}^{\infty}\left(\frac{1}{6}\right)^i
+	\end{equation*}
+	
+	\item Recall the geometric series:
+	
+	\begin{equation*}
+	\sum_{i=1}^{\infty}\left(\frac{1}{6}\right)^i = \frac{1}{1 - \frac{1}{6}} - 1 = \frac{1}{5}
+	\end{equation*}
+	
+	\item If Student B consumes this much, the other student must consume:
+	
+	\begin{equation*}
+	\frac{4}{5}
+	\end{equation*}
+	
+\end{itemize}
+
+\item For each sequence, stat exactly how large $n$ must be to ensure that the term $a_n$ of the sequence satisfies $|a_n| < 10^{-4}$. Then, use the information to explain which sequences approaches zero most rapidly and which approaches zero least rapidly.
+
+\begin{itemize}
+
+	\item Consider the sequence:
+	
+	\begin{equation*}
+	\left\{ \frac{1}{\sqrt{n}} \right\}_{n = 1}^{\infty}
+	\end{equation*}
+	
+	\item Now consider the definition of the limit of sequence:
+	
+	\begin{equation*}
+	\forall\epsilon>0 \; \exists n_\epsilon \in N \; \forall n \ge n_\epsilon : \left|a_n - b\right| < \epsilon
+	\end{equation*}
+	
+	\item The limit of the sequence is zero. Therefore:
+	
+	\begin{equation*}
+	\left|\frac{1}{\sqrt{n}} - 0\right| < \epsilon
+	\end{equation*}
+	
+	\item And therefore:
+	
+	\begin{equation*}
+	-\frac{1}{\sqrt{n}} < \epsilon \therefore n > 0
+	\end{equation*}
+	
+	\item And:
+	
+	\begin{equation*}
+	\frac{1}{\sqrt{n}} < \epsilon \therefore \left(\frac{1}{\epsilon}\right)^2 > n
+	\end{equation*}
+	
+	\item a) Thus, if the index is greater than $10^8$, the result will be smaller than $10^{-4}$.
+	
+	\item b) Thus, if the index is greater than $10^{16}$, the result will be smaller than $10^{-8}$.
+	
+	\item Consider the sequence:
+	
+	\begin{equation*}
+	\left\{ \frac{1}{10^n} \right\}_{n = 1}^{\infty}
+	\end{equation*}
+	
+	\item Again, by definition of the limit of a sequence (our limit is zero):
+	
+	\begin{equation*}
+	\left|\frac{1}{10^n}\right| < \epsilon
+	\end{equation*}
+	
+	\item Therefore, there two cases are:
+	
+	\begin{equation*}
+	-\frac{1}{10^n} < \epsilon \therefore n > 0
+	\end{equation*}
+	
+	\item And:
+	
+	\begin{equation*}
+	\frac{1}{\sqrt{n}} < \epsilon \therefore 4\log10 < n \therefore 4 < n
+	\end{equation*}
+	
+	\item a) Thus, if the index is greater than 4, the result will be smaller than $10^{-4}$.
+	
+	\item b) Similarly, if the index is greater than 8, the result will be smaller than $10^{-8}$.
+	
+	\item c) Being as the index 4 brings the second sequence closer to a small number than the index $10^8$ brings our first sequence to the same small number, the second sequence must approach zero faster
+	
+\end{itemize}
+
+\end{itemize}
+
+
+\end{document}

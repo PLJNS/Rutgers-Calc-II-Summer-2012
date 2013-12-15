@@ -1,0 +1,352 @@
+
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\title{Exam I Review}
+
+\author{Paul Jones \\
+		Instructor Mariya Naumova\\
+		Calculus II (01:640:152, section C2)}
+
+\date{\today}
+
+\usepackage{setspace}
+\doublespacing
+
+\begin{document}
+
+
+\maketitle
+
+\pagebreak
+
+\setcounter{section}{5}
+
+\section{Applications of the Integral}
+
+
+	\subsection{Area Between Two Curves} 
+		\paragraph{Suggestion} You should know all the theoretical material covered in this chapter 
+		(finding areas between the graphs integrating along both the x- and the y-axis).
+		
+		\paragraph{Formulas} 
+			\begin{itemize}
+				\item Area between the graphs along x-axis
+					
+					\begin{equation*}
+					\int_a^b \! y_{top} - y_{bot} \, \mathrm{d}x
+					\end{equation*}
+						
+				\item Area between the graphs along y-axis
+				
+					\begin{equation*}
+					\int_a^b \! x_{right} - x_{left} \, \mathrm{d}y = \int_a^b \! g(y) - h(y) \, \mathrm{d}y
+					\end{equation*}
+					
+				\end{itemize}
+		
+		\pagebreak
+		
+	\subsection{Setting Up Integrals: Volume, Density, and Average Valuue}
+		
+		\paragraph{Suggestion} Make sure you can find volume as the integral of cross-sectional area. 
+		For this, it is important to be able to find a formula for the cross-sectional area, and the limits of integration. 
+		You should also know how to compute masses given density functions, and how to find the average value of a continuous function. 
+		You should know the statement of the Mean Value Theorem for Integrals.
+		Computing population and finding the flow rate is not included in the exam topics.
+		
+		\paragraph{Formulas} 
+			\begin{itemize}
+				\item Volume
+					
+					\begin{equation*}
+					V = \int_a^b \! A(y) \, \mathrm{d}y
+					\end{equation*}
+					\begin{flushright}
+						Where $A(y)$ equal some cross sectional area
+					\end{flushright}
+				\item Total mass
+					
+					\begin{equation*}
+					M = \int_a^b \! \rho(x) \, \mathrm{d}x
+					\end{equation*}
+					\begin{flushright}
+				 Where $\rho(x)$ equal some cross sectional area
+					\end{flushright}
+					
+				\item Average value
+					
+					\begin{equation*}
+					M = \frac{1}{b - a}\int_a^b \! f(x) \, \mathrm{d}x
+					\end{equation*}
+					
+				\item Mean Value Theorum
+				
+					If $ G:[a,b]\to \mathrm{R} $ is a continuous function and $ \varphi $ is an integrable function that does not 
+					change sign on the interval $[a, b]$  then there exists a number $ x\in(a,b)$ such that
+					\begin{equation*}
+						\int_a^b G(t)\varphi (t) \, dt=G(x) \int_a^b \varphi (t) \, dt.
+					\end{equation*}	
+				\end{itemize}
+				
+				\pagebreak
+				
+	\subsection{Volumes of Revolution (Disc method)}
+		\paragraph{Suggestion} Learn all the methods of finding a volume of revolution. 
+		Depending on the problem, certain methods are much easier to use than others! 
+		It is really important to be able to tell which to use.
+		
+		\paragraph{Formulas} 
+					\begin{itemize}
+					\item For the region between $y = f(x)$ and the $x$-axis, rotated about the $x$-axis:
+						\begin{equation*}
+							V = \pi\int_a^b \! R^2 \, \mathrm{d}x = \pi\int_a^b \! f(x)^2 \, \mathrm{d}x
+						\end{equation*}
+						
+						\begin{flushright}
+							 Vertical cross section: a circle of radius $R = f(x)$ and area $\pi R^2 = \pi f(x)^2$
+						\end{flushright}
+					\item For the region between $y = f(x)$ and $y = g(x)$, rotated about the $x$-axis:
+						
+						\begin{equation*}
+							V = \pi\int_a^b \! (R_{\mathrm{outer}}^2 - R_{\mathrm{inner}}^2) \, \mathrm{d}x = 
+							\pi\int_a^b \! (f(x)^2 - g(x)^2) \, \mathrm{d}x
+						\end{equation*}
+						
+					\item To rotate about $y = c$, where $ c\ge f(x) \ge g(x)$, modify radii accordingly:
+						
+						\begin{equation*}
+							R_{\mathrm{outer}} = c - g(x), R_{\mathrm{outer}} = c - f(x)
+						\end{equation*}
+						
+					\item To rotate about $y = c$, where $ f(x) \ge g(x) \ge c$, modify radii accordingly:
+						
+						\begin{equation*}
+							R_{\mathrm{outer}} = f(x) - c, R_{\mathrm{outer}} = g(x) - c
+						\end{equation*}
+					
+					\end {itemize}
+			\pagebreak		
+				
+	\subsection{Volume of Revolution (Shell method)}
+		\paragraph{Suggestion} See above
+		\paragraph{Formulas} 
+			\begin{itemize}
+					
+				\item The area of a shell will equal two pi multiplied by the radius and the height of the shell. Integrate this to find the volume:
+				
+					\begin{equation*}
+						V = 2\pi\int_a^b \! (\mathrm{radius})(\mathrm{height}) \, \mathrm{d}x = 
+							2\pi\int_a^b \! xf(x) \, \mathrm{d}x
+					\end{equation*}
+				
+				\item The volume of the region between $y = f(x)$ and $y = g(x)$ rotated about the $y$-axis is given by:
+					\begin{equation*}
+						V = 2\pi\int_a^b \! x(f(x) - g(x)) \, \mathrm{d}x
+					\end{equation*}	
+					
+				\item If $c \le a$:
+					\begin{equation*}
+						V = 2\pi\int_a^b \! (x - c)f(x) \, \mathrm{d}x
+					\end{equation*}		
+					
+				\item If $c \ge a$:
+					\begin{equation*}
+						V = 2\pi\int_a^b \! (c - x)f(x) \, \mathrm{d}x
+					\end{equation*}	
+							
+			\end{itemize}
+			
+\pagebreak
+\section{Techniques of Integration}
+	\subsection{Integration by Parts}
+		\paragraph{Suggestion} Learn the integration by parts formula (or know how to derive it). 
+		Also learn how to pick $u$ and $dv$ appropriately. 
+		Remember that sometimes you need to apply this formula several times for one given integral.
+		
+		\paragraph{Formulas} 
+			\begin{itemize}
+				\item Integration by parts formula
+					
+					\begin{equation*}
+					\int \! u(x)v'(x) \, \mathrm{d}x = u(x)v(x) - \int \! u'(x)v(x) \, \mathrm{d}x
+					\end{equation*}
+					
+					
+				\item Reduction formula
+					
+					\begin{equation*}
+					\int \! x^n e^x \, \mathrm{d}x = x^n e^x - n\int \! x^{n - 1}e^x \, \mathrm{d}x
+					\end{equation*}
+				\end{itemize}
+				\pagebreak
+	\subsection{Trigonometric Integrals}
+		\paragraph{Suggestion} 
+		You should know how to obtain the results summarized in the table at the end of this chapter (p.410).
+I recommend going over the theory that was given in class for different "m" and "n" combinations (even/odd).
+Also make sure you know which cases can be solved using a simple u-substitution instead of integration by parts and reduction formulas, since this is a much faster method, and will save you a lot of time on the exam.
+		\paragraph{Formulas} 
+			\begin{itemize}
+				\item Sine reduction formula
+					
+					\begin{equation*}
+						\int \! \sin^n x \, \mathrm{d}x = 
+						- \frac{1}{n}\sin^{x - 1}x\cos x + \frac{n -1}{n}\int \! \sin^{n - 2}x \, \mathrm{d}x
+					\end{equation*}
+					
+					\item Cosine reduction formula
+					
+					\begin{equation*}
+						\int \! \cos^n x \, \mathrm{d}x = 
+						\frac{1}{n}\cos^{x - 1}x\sin x + \frac{n - 1}{n}\int \! \cos^{n - 2}x \, \mathrm{d}x
+					\end{equation*}
+					
+				\end{itemize}
+				
+				\pagebreak
+				
+	\subsection{Trigonometric Substitution}
+		\paragraph{Suggestion} Learn to identify which trig substitution is appropriate for which integrals, and how to make the substitution. The chapter summary is quite helpful here.
+		\paragraph{Formulas} Trigonometric substitution: 
+			\begin{table}[h]
+			\begin{center}
+				\begin{tabularx}{1\textwidth}{X X X}
+				$ \sqrt{a^2 - x^2} $ & $ x = a\sin \theta\mathrm{d}\theta $ & $ \mathrm{d}x = a \cos\theta\mathrm{d}\theta  $ \\ 
+				$ \sqrt{a^2 + x^2} $ & $ x = a\tan \theta\mathrm{d}\theta $ & $ \mathrm{d}x = a \sec^2\theta\mathrm{d}\theta $ \\
+				$ \sqrt{x^2 - a^2} $ & $ x = a\sec \theta\mathrm{d}\theta $ & $ \mathrm{d}x = a \sec\theta\tan\theta\mathrm{d}\theta  $ \\
+				\end{tabularx}
+			\label{ }
+			\end{center}
+			\end{table}
+			
+	\subsection{Integrals Involving Hyperbolic and Inverse Hyperbolic Functions}
+		\paragraph{Suggestion} Know the definitions of the hyperbolic trig function.
+		\paragraph{Formulas} 
+					
+			\begin{equation*}
+				\int \! \frac{\mathrm{d}x}{\sqrt{x^2 + 1}} \, = \sinh^{-1}x + C 
+			\end{equation*}
+			
+			\begin{equation*}
+				\int \! \frac{\mathrm{d}x}{\sqrt{x^2 - 1}} \, = \cosh^{-1}x + C \quad (x > 1) 
+			\end{equation*}
+
+			\begin{equation*}
+				\int \! \frac{\mathrm{d}x}{1 - x^2} \, = \tanh^{-1}x + C  \quad (|x| < 1) 
+			\end{equation*}
+
+			\begin{equation*}
+				\int \! \frac{\mathrm{d}x}{1 - x^2} \, = \tanh^{-1}x + C  \quad (|x| > 1)
+			\end{equation*}
+			
+			\begin{equation*}
+				\int \! \frac{\mathrm{d}x}{x\sqrt{1 - x^2}} \, = -\mathrm{sech}^{-1}x + C \quad (0 < x < 1)
+			\end{equation*}
+			
+			\begin{equation*}
+				\int \! \frac{\mathrm{d}x}{|x|\sqrt{1 + x^2}} \, = -\mathrm{csch}^{-1}x + C \quad (x \not= 0) 
+			\end{equation*}
+
+\pagebreak
+
+	\subsection{The Method of Partial Fraction}
+	
+		\paragraph{Suggestion} Learn to recognize proper and improper rational functions (don't confuse with improper integrals).
+Example: $y=\frac{x^5}{(x^2+2x)}$ is improper function for the Method of Partial Fractions (the degree of the numerator is greater than the degree of the denominator).
+Learn how to convert improper rational functions to the sum of a polynomial and a proper rational function using long division. Then make sure you know how to identify which terms appear in the partial fractions decomposition by looking at the denominator, and how to solve for all the constants. Finally, make sure you know how to integrate each term in the decomposition.
+		
+		\paragraph{Formulas}
+		
+			\begin{itemize}
+			
+				\item If $Q(x) = (x - a_1)(x - a_2) ... (x - a_n)$, where the roots of $a_j$ are distinct, then:
+				
+				\begin{equation*}
+					\frac{P(x)}{(x - a_1)(x - a_2) ... (x - a_n)} = \frac{A_1}{x - a_1} + \frac{A_2}{x - a_2} + ... + \frac{A_n}{x - a_n}
+				\end{equation*}
+				
+				\item To calculate the constants, clear denominators and substitute, in turn, the values $x = a_1, a_2, ... \: a_n$.
+				
+				\item If $Q(x)$ is equal to a product of power of linear factors, $(x - a)^M$ and irreducible quadratic factors $(x^2 + b)^N$ with $b > 0$, then the partial fraction decomposition of $\frac{P(x)}{Q{x}}$ is a some of terms of the follow type:
+				
+\begin{table}[h]
+			\begin{center}
+				\begin{tabularx}{.9\textwidth}{X X X}
+				$ (x - a)^M $ & contributes & $ \frac{A_1}{x - a} + \frac{A_2}{(x - a)^2} + ... + \frac{A_M}{(x - a)^n}  $ \\ 
+				$ (x^2 + b)^N $ & contributes & $ \frac{A_1 x+ B_1}{x^2 + b} + \frac{A_2 x+ B_2}{(x^2 + b)^2} + ... + \frac{A_N x+ B_N}{(x^2 + b)^N}$ \\
+				\end{tabularx}
+			\label{ }
+			\end{center}
+			\end{table}
+				
+			\item Substitution and trigonometric substitution may be needed to integrate the terms corresponding to $(x^2 + b)^N$
+			
+			\item If $P(x)/Q(X)$ is improper, use long division.
+				
+			\end{itemize}
+		
+	\pagebreak
+	\subsection{Improper Integral}
+	
+		\paragraph{Suggestion} Know the limit definition for improper integrals, and review L'H\^{o}pital's rule. The methods of integration covered earlier in the semester are often needed to evaluate these improper integrals, especially integration by parts.
+		
+		
+		\paragraph{Formulas}
+		
+		\begin{itemize}
+			\item An \emph{improper integral} is defined as the limit of ordinary integrals:
+			
+			\begin{equation*}
+				\int_a^\infty \! f(x) \, \mathrm{d}x = \lim_{R\to\infty}\int_a^R \! f(x) \, \mathrm{d}x
+			\end{equation*}
+			
+			The improper integral \emph{converges} if this limit exists, and \emph{diverges} otherwise.
+			
+			\item If $f(x)$ is continuous on $[a, b)$ but discontinuous at $x = b$, then:
+				
+				\begin{equation*}
+					\int_a^b \! f(x) \, \mathrm{d}x = \lim_{R\to b^{-}}\int_a^R \! f(x) \, \mathrm{d}x
+				\end{equation*}
+			
+		\end{itemize}
+	
+	\pagebreak
+	\setcounter{subsection}{7}
+	\subsection{Numerical Integration}
+
+		\paragraph{Suggestion}
+		You should be able to interpret the trapezoidal rule and the midpoint rule geometrically. Simpson's rule is covered in class but it won't be included in the 1st Exam. You do not need to learn the error bound formulas in this section.
+		
+		\paragraph{Formulas}
+		
+		\begin{itemize}
+		
+		\item Trapezoidal rule:
+		
+		\begin{equation*}
+		T_N = \frac{1}{2}\Delta x(y_0 + 2y_1 + 2y_2 + ... + 2y_{n - 1} + y_N)
+		\end{equation*}
+		
+		\item Midpoint Rule:
+		
+		\begin{equation*}
+		M_N = \Delta x (f(c_1) + f(c_2) + ... + f(c_N)) \quad  (c_j = a + (j - \frac{1}{2}) \Delta x)
+		\end{equation*}
+		
+		\item Simpson's Rule:
+		
+		\begin{equation*}
+		S_N = \frac{1}{3}\Delta x [y_0 + 4y_1 + 2y_2 + ... + 4y_{n-3} + 2y_{n-2} + 4y_{n-1} + 4y_{n}]
+		\end{equation*}
+		
+		\begin{flushright}
+		Where $\Delta x = (b - a) / N$ and $y_j = f(a + j\Delta x)$.
+		\end{flushright}
+		
+		\end{itemize}
+		
+\end{document}
